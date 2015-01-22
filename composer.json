@@ -1,0 +1,27 @@
+{
+    "name": "Delphine/a2_php_oop_gr2",
+    "require": {
+        "cocur/slugify": "~1.0",
+        "doctrine/dbal": "~2.5",
+        "doctrine/orm": "~2.3",
+        "symfony/console": "~2.5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Delphine IDIART",
+            "email": "idiart.delphine@yahoo.fr"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "Poylpailin\\PokemonBattle\\": "src"
+        }
+    },
+
+    "config": {
+        "bin-dir": "bin"
+    }
+
+}

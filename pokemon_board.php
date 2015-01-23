@@ -2,6 +2,7 @@
 
 use Poylpailin\PokemonBattle\Pokemon;
 use Poylpailin\PokemonBattle\Trainer;
+
 $em = require __DIR__ . '/bootstrap.php';
 
 // RECUPERER LE TRAINER
@@ -19,10 +20,8 @@ $em = require __DIR__ . '/bootstrap.php';
     $pokemonRepo = $em->getRepository('Poylpailin\PokemonBattle\Pokemon');
     $pokemon = $pokemonRepo->findOneBy([
         'trainer' => $trainer,
-
     ]);
 
-var_dump($pokemon);
 
 //SECTION CREATION DU POKEMON
 if(isset($_POST['name']) && !empty($_POST['name']) && isset($_POST['type']) && !empty($_POST['type'])) {
@@ -34,9 +33,17 @@ if(isset($_POST['name']) && !empty($_POST['name']) && isset($_POST['type']) && !
     // Définition des valeurs
     $pokemon
         ->setName($_POST['name'])
-        ->setType(Pokemon::TYPE_FIRE)
         ->setHP(100)
         ->SetTrainer($trainer);
+            if($_POST['type'] == 'plant') {
+                $pokemon->setType(Pokemon::TYPE_PLANT);
+            }
+            elseif($_POST['type'] == 'fire'){
+                $pokemon->setType(Pokemon::TYPE_WATER);
+            }
+            elseif($_POST['type'] == 'water') {
+                $pokemon->setType(Pokemon::TYPE_FIRE);
+            }
 
     // récupère la valeur de $pokemon
     $em->persist($pokemon);

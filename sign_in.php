@@ -32,4 +32,3 @@ if(isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['pass
 
 require 'views/sign_in.php';
 
-

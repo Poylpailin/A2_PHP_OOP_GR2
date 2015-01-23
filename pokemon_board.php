@@ -15,7 +15,7 @@ $em = require __DIR__ . '/bootstrap.php';
         'username' => $_SESSION['username'],
     ]);
 
-//SECTION AFFICHAGE DU POKEMON
+//SECTION AFFICHAGE DU POKEMON - TROUVER LE TRAINER DU POKEMON
     /** @var  \Doctrine\ORM\EntityRepository $pokemonRepo */
     $pokemonRepo = $em->getRepository('Poylpailin\PokemonBattle\Pokemon');
     $pokemon = $pokemonRepo->findOneBy([

@@ -1,6 +1,6 @@
 <?php
 
-namespace Poylpailin\PokemonBattle\Model;
+namespace Poylpailin\PokemonBattle;
 
 /**
  * Class Pokemon
@@ -11,7 +11,7 @@ namespace Poylpailin\PokemonBattle\Model;
  * @Table(name="pokemon")
  */
 
-class Pokemon implements PokemonInterface
+class Pokemon implements Model\PokemonInterface
 {
     /**
      * @var int
@@ -24,8 +24,7 @@ class Pokemon implements PokemonInterface
 
     /**
      * @var string
-     *
-     * @Column(name="username", type="string", length=20)
+     * @Column(name="name", type="string", length=20)
      */
     private $name;
 
@@ -48,6 +47,14 @@ class Pokemon implements PokemonInterface
     const TYPE_PLANT = 2;
 
     /**
+     * C'est un objet
+     * @var trainer
+     * @OneToOne(targetEntity="Trainer")
+     *
+     */
+    private $trainer;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -65,12 +72,12 @@ class Pokemon implements PokemonInterface
 
     /**
      * @param string $name
-     * @return PokemonModel
+     * @return Pokemon
      * @throws \Exception
      */
     public function setName($name)
     {
-        if (is_int($name))
+        if (is_string($name))
             $this->name = $name;
         else
             throw new \Exception('Name must be a string');
@@ -87,7 +94,7 @@ class Pokemon implements PokemonInterface
 
     /**
      * @param int $hp
-     * @return PokemonModel
+     * @return Pokemon
      * @throws \Exception
      */
     public function setHp($hp)
@@ -101,7 +108,7 @@ class Pokemon implements PokemonInterface
 
     /**
      * @param int $hp
-     * @return PokemonModel
+     * @return Pokemon
      * @throws \Exception
      */
     public function addHP($hp)
@@ -111,7 +118,7 @@ class Pokemon implements PokemonInterface
 
     /**
      * @param int $hp
-     * @return PokemonModel
+     * @return Pokemon
      * @throws \Exception
      */
     public function removeHP($hp)
@@ -129,7 +136,7 @@ class Pokemon implements PokemonInterface
 
     /**
      * @param int $type
-     * @return PokemonModel
+     * @return Pokemon
      * @throws \Exception
      */
     public function setType($type)
@@ -141,9 +148,31 @@ class Pokemon implements PokemonInterface
             ]))
             $this->type = $type;
         else
-            throw new \Exception('Status not valid');
+            throw new \Exception('Type is not valid');
         return $this;
     }
 
+    /**
+     *
+     * @return string
+     */
+    public function getTrainer()
+    {
+        return $this->trainer;
+    }
+
+    /**
+     * @param $trainer
+     * @return $this
+     * @throws \Exception
+     */
+    public function setTrainer($trainer)
+    {
+        if (is_object($trainer))
+            $this->trainer = $trainer;
+        else
+            throw new \Exception('Trainer is not an object');
+        return $this;
+    }
 
 }

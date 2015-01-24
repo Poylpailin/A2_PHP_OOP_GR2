@@ -21,11 +21,11 @@ if(isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['pass
         // RECUPERER DES ELEMENTS DANS UN OBJET
         $_SESSION['username'] = $trainer->getUsername();
 
-        echo 'Vous etes bien connecte' ;
+        echo '<div class="validation">Vous etes bien connecte</div>' ;
     }
 
     else{
-        echo 'Invalide';
+        echo '<div class="echec">Invalide</div>';
     }
 
 }

@@ -4,12 +4,13 @@ require __DIR__.'/vendor/autoload.php';
 
 if ($_SESSION ==  TRUE){
 
-    echo $_SESSION['username'];
+    echo "Bonjour ".$_SESSION['username'];
 
-    require 'views/pokemon_board.php';
+    require 'pokemon_board.php';
 
 }else{
-  echo 'Merci de vous connecter';
+  echo '<div id="index">Merci de vous connecter</div>';
+    require 'views/sign_in.php';
 }
 
 ?>

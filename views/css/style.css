@@ -1,0 +1,83 @@
+/* MENU */
+#menu{
+    height: 60px;
+}
+
+#menu ul{
+    margin-top: 5px;
+    font-size: 1.5em;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+
+#logo{
+    margin-top: -5px;
+}
+
+/* PAGE */
+#sign_in{
+    background: url("wall_sacha.jpg") no-repeat center fixed;
+    -webkit-background-size: cover; /* pour Chrome et Safari */
+    -moz-background-size: cover; /* pour Firefox */
+    -o-background-size: cover; /* pour Opera */
+    background-size: cover; /* version standardisée */
+
+    color: #000;
+
+    height: 500px;
+
+    text-align: center;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+
+#sign_up{
+    background: url("wall.png") no-repeat center fixed;
+    -webkit-background-size: cover; /* pour Chrome et Safari */
+    -moz-background-size: cover; /* pour Firefox */
+    -o-background-size: cover; /* pour Opera */
+    background-size: cover; /* version standardisée */
+
+    color: #fff;
+
+    height: 500px;
+
+    text-align: center;
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+
+#formulaire_sign_in, #formulaire_sign_up{
+    padding: 30px;
+}
+
+#formulaire_sign_in a, #formulaire_sign_up a{
+    color: grey;
+    font-size: 1.5em;
+}
+
+#formulaire_sign_in h3, #formulaire_sign_up h3{
+    padding: 15px;
+    font-size: 4em;
+
+}
+
+#password, #username{
+    padding: 5px;
+    color: #ea3232;
+}
+
+.submit{
+    padding-left: 45px;
+    padding-right: 45px;
+    background-color: #ea3232;
+    color: white;
+    border-radius: 10px;
+}
+
+.validation{
+    background-color: #7ec197;
+    color: white;
+    width: 100%;
+    padding: 35px;
+    text-align: center;
+    font-family:Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 2em;
+}

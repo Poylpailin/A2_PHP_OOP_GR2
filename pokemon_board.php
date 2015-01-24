@@ -1,9 +1,11 @@
-<?php require __DIR__.'/header.php';
+<?php
 
 use Poylpailin\PokemonBattle\Pokemon;
 use Poylpailin\PokemonBattle\Trainer;
 
 $em = require __DIR__ . '/bootstrap.php';
+
+
 
 // RECUPERER LE TRAINER
     /** @var \Doctrine\ORM\EntityRepository $trainerRepo */

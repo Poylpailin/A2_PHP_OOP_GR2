@@ -19,7 +19,7 @@ if(isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['pass
     // envoi dans la base de donnée
     $em->flush();
 
-    echo 'Votre inscription a bien ete prise en compte!';
+    echo '<div class="validation">Votre inscription a bien ete prise en compte!</div>';
 }
 
 require 'views/sign_up.php';

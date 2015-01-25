@@ -55,6 +55,14 @@ class Pokemon implements Model\PokemonInterface
     private $trainer;
 
     /**
+     * @var int
+     *
+     * @Column(name="restart", type="integer", length=10)
+     */
+    private $resuscitate;
+
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -175,4 +183,25 @@ class Pokemon implements Model\PokemonInterface
         return $this;
     }
 
+    /**
+     * @return int
+     */
+    public function getResuscitate()
+    {
+        return $this->resuscitate;
+    }
+
+    /**
+     * @param int $resuscitate
+     * @throws \Exception
+     * @return Pokemon
+     */
+    public function setResuscitate($resuscitate)
+    {
+        if (is_int($resuscitate))
+            $this->resuscitate = $resuscitate;
+        else
+            throw new \Exception('Resuscitate must be an integer');
+        return $this;
+    }
 }

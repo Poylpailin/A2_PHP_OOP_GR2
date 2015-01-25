@@ -18,7 +18,7 @@
     }else{
 
     if ($pokemon->getHp() == 0) {
-        echo '<a href="resuscitate.php?id=' . $pokemon->getId() . '" class="margin_top button_model_2 btn btn-lg btn-primary btn-block button_trainer">RESUSCITATE</a>';
+        echo '<a class="submit" href="resuscitate.php?id=' . $pokemon->getId() . '">RESSUSCITER VOTRE POKEMON</a>';
     }
 
     else{

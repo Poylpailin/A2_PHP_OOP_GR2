@@ -4,7 +4,7 @@ require __DIR__.'/vendor/autoload.php';
 
 if ($_SESSION ==  TRUE){
 
-    echo "Bonjour ".$_SESSION['username'];
+    echo "Bonjour ".$_SESSION['username'].'<br />';
 
     require 'pokemon_board.php';
 

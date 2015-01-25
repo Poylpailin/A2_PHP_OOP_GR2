@@ -17,9 +17,15 @@
 <?php
     }else{
 
-    /** @var \Poylpailin\PokemonBattle\Pokemon $pokemon */
-    echo "Nom du pokemon : ".$pokemon->getName()."<br />HP : ".
-    $pokemon->getHP()."<br /><a href='opponents.php'>ATTACK POKEMON</a>";
+    if ($pokemon->getHp() == 0) {
+        echo '<a href="resuscitate.php?id=' . $pokemon->getId() . '" class="margin_top button_model_2 btn btn-lg btn-primary btn-block button_trainer">RESUSCITATE</a>';
+    }
+
+    else{
+        /** @var \Poylpailin\PokemonBattle\Pokemon $pokemon */
+        echo "Nom du pokemon : ".$pokemon->getName()."<br />HP : ".
+            $pokemon->getHP()."<br /><a href='opponents.php'>ATTACK POKEMON</a>";
+    }
 
 
 } ?>

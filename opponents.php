@@ -4,19 +4,8 @@ $em = require __DIR__ . '/bootstrap.php';
 use Poylpailin\PokemonBattle\Pokemon;
 use Poylpailin\PokemonBattle\Trainer;
 
-
-// RECUPERE TOUS LES POKEMON DE LA BASE DE DONNEES
-// SAUF SOI MEME
-
     /** @var  \Doctrine\ORM\EntityRepository $pokemonRepo */
     $pokemonRepo = $em->getRepository('Poylpailin\PokemonBattle\Pokemon');
-
-    /** @var \Doctrine\ORM\EntityRepository $trainerRepo */
-    $trainerRepo = $em->getRepository('Poylpailin\PokemonBattle\Trainer');
-    $trainer = $trainerRepo->findOneBy([
-        'username' => $_SESSION['username'],
-    ]);
-
     /** @var \Poylpailin\PokemonBattle\Pokemon $pokemon */
     $pokemon = $pokemonRepo->findAll(); ?>
 
@@ -29,13 +18,13 @@ use Poylpailin\PokemonBattle\Trainer;
                     <th>Name</th>
                     <th>Type</th>
                     <th>HP</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody> <?php foreach ($pokemon as $var) {
                 $tr = $var->getTrainer(); ?>
 
                 <tr>
-                    <!-- NOM -->
                     <td>
                         <?php echo $var->getName(); ?>
                     </td>
@@ -53,13 +42,13 @@ use Poylpailin\PokemonBattle\Trainer;
 
                     <!-- HP -->
                     <td><?php echo $var->getHp(); ?></td>
+                    <td><button type="submit" class="btn btn-default"><a href="battle.php?id=<?php echo $var->getId();?>">Attaquer</a></button></td>
                 </tr>
 
                         <?php } ?>
+
+
             </tbody>
         </table>
     </div><!-- DIV TABLEAU -->
 </div>
-
-?>
-

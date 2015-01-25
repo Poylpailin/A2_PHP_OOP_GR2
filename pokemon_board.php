@@ -1,4 +1,4 @@
-<?php
+<?php require __DIR__.'/header.php';
 
 use Poylpailin\PokemonBattle\Pokemon;
 use Poylpailin\PokemonBattle\Trainer;

@@ -81,3 +81,7 @@
     font-family:Tahoma, Arial, Helvetica, sans-serif;
     font-size: 2em;
 }
+
+#tableau, #tableau th{
+    text-align: center;
+}
